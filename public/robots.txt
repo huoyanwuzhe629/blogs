@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://huoyanwuzhe629.github.io/sitemap.xml
