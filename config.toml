@@ -32,9 +32,9 @@ defaultContentLanguage = "zh-cn"           # Default language to use
   filename = "sitemap.xml"
 
 [[menu.main]]             # config your menu              # 配置目录
-  name = "主页"
+  name = "Home"
   weight = 10
-  identifier = "主页"
+  identifier = "home"
   url = "/"
 [[menu.main]]
   name = "Archives"

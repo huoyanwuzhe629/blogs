@@ -10,5 +10,5 @@ comment: false
 mathjax: false
 ---
 
-前端开发一枚！
+前端开发一枚，随心记录！
 
