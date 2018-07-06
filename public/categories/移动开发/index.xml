@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>移动开发 on 千阳谷</title>
+    <link>https://huoyanwuzhe629.github.io/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 移动开发 on 千阳谷</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 06 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://huoyanwuzhe629.github.io/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>移动端自适应实践</title>
+      <link>https://huoyanwuzhe629.github.io/post/mobile-rem-practice/</link>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://huoyanwuzhe629.github.io/post/mobile-rem-practice/</guid>
+      <description>移动端自适应实践 市面上的方案 流式布局 也就是固定高度，宽度使用百分比的方法，这种方法会导致一些元素在大屏手机上拉伸严重的情况，影响视觉效果，只</description>
+    </item>
+    
+  </channel>
+</rss>

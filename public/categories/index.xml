@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 千阳谷</title>
+    <link>https://huoyanwuzhe629.github.io/categories/</link>
+    <description>Recent content in Categories on 千阳谷</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	<atom:link href="https://huoyanwuzhe629.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>移动开发</title>
+      <link>https://huoyanwuzhe629.github.io/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://huoyanwuzhe629.github.io/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
