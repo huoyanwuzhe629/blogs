@@ -110,10 +110,10 @@ defaultContentLanguage = "zh-cn"           # Default language to use
     gitmentCSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">'
 
   [params.gitment]          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
-    owner = ""              # Your GitHub ID
-    repo = ""               # The repo to store comments
-    clientId = ""           # Your client ID
-    clientSecret = ""       # Your client secret
+    owner = "huoyanwuzhe629"              # Your GitHub ID
+    repo = "comments"               # The repo to store comments
+    clientId = "82c0c71af55c6226bc6b"           # Your client ID
+    clientSecret = "c4e33c830095e29488b2d5b0a4c93ab85e3a0765"       # Your client secret
 
 
   [params.reward]                                         # 文章打赏
