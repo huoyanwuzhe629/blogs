@@ -3,7 +3,7 @@
  # @Author: xiongsheng
  # @Date: 2018-07-07 02:37:18
  # @LastEditors: xiongsheng
- # @LastEditTime: 2021-12-19 12:51:58
+ # @LastEditTime: 2021-12-19 19:52:39
  # @Description: 
 ### 
 if [ $# -lt  1 ]; then
@@ -11,15 +11,7 @@ if [ $# -lt  1 ]; then
     exit 1
 fi
 msg="$1"
-git commit -m "$msg"
-if [ $? -ne 0 ]; then
-    echo "Commit failed"
-    exit 1
-fi
-git push origin master
-if [ $? -ne 0 ]; then
-    echo "Push failed"
-fi
+
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 # Build the project.
 hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
@@ -33,3 +25,13 @@ git commit -m "$msg"
 git push origin master
 # Come Back up to the Project Root
 cd ..
+git add public
+git commit -m "$msg"
+if [ $? -ne 0 ]; then
+    echo "Commit failed"
+    exit 1
+fi
+git push origin master
+if [ $? -ne 0 ]; then
+    echo "Push failed"
+fi

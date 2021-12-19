@@ -104,5 +104,5 @@ let db = {
 obj.myFun.myCall(db,'成都','上海');     // 德玛 年龄 99  来自 成都去往上海
 obj.myFun.myApply(db,['成都','上海']);      // 德玛 年龄 99  来自 成都去往上海
 obj.myFun.myBind(db,'成都','上海')();       // 德玛 年龄 99  来自 成都去往上海
-obj.myFun.myBind(db,['成都','上海'])();   // 德玛 年龄 99  来自 成都, 上海去往 undefined
+obj.myFun.myBind(db,['成都test','上海'])();   // 德玛 年龄 99  来自 成都test, 上海去往 undefined
 ```
