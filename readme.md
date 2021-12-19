@@ -1,0 +1,15 @@
+<!--
+ * @Author: xiongsheng
+ * @Date: 2021-12-19 11:22:34
+ * @LastEditors: xiongsheng
+ * @LastEditTime: 2021-12-19 12:44:56
+ * @Description: 
+-->
+## 整体参考 https://keysaim.github.io/post/blog/deploy-hugo-blog-in-github.io/
+## 依赖项
+hugo 版本 0.42.2
+jane主题 hugo版本不可升级，会导致主页为空，有不兼容更新，从https://github.com/gohugoio/hugo/releases寻找对应版本
+
+## 项目文件结构
+1. blogs/content中为源码，编辑后使用hugo server可预览
+2. 执行hugo命令，编译文件，存放于public目录中，public目录连接到github page仓库，提交即部署

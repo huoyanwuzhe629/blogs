@@ -1,27 +1,35 @@
 #!/bin/bash
-
+###
+ # @Author: xiongsheng
+ # @Date: 2018-07-07 02:37:18
+ # @LastEditors: xiongsheng
+ # @LastEditTime: 2021-12-19 12:51:58
+ # @Description: 
+### 
+if [ $# -lt  1 ]; then
+    echo "$0 <commit message>"
+    exit 1
+fi
+msg="$1"
+git commit -m "$msg"
+if [ $? -ne 0 ]; then
+    echo "Commit failed"
+    exit 1
+fi
+git push origin master
+if [ $? -ne 0 ]; then
+    echo "Push failed"
+fi
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
-
 # Build the project.
 hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
-
 # Go To Public folder
 cd public
 # Add changes to git.
 git add .
-
 # Commit changes.
-msg="rebuilding site `date`"
-if [ $# -eq 1 ]
-  then msg="$1"
-fi
 git commit -m "$msg"
-
 # Push source and build repos.
-echo 111
 git push origin master
-echo 1111
-
-
 # Come Back up to the Project Root
 cd ..
