@@ -106,3 +106,46 @@ obj.myFun.myApply(db,['成都','上海']);      // 德玛 年龄 99  来自 成�
 obj.myFun.myBind(db,'成都','上海')();       // 德玛 年龄 99  来自 成都去往上海
 obj.myFun.myBind(db,['成都test','上海'])();   // 德玛 年龄 99  来自 成都test, 上海去往 undefined
 ```
+
+### 4. 继承 圣杯模式
+```
+function inherit(Target, Origin){
+  function F() {} // 函数F作为一个中间层，上连father，下连Son，使两函数互不干扰
+  F.prototype = Origin.prototype;
+  Target.prototype = new F();
+  Target.prototype.constructor = Target;
+  // son原型归位
+  Target.prototype.uber = Origin.prototype;
+}
+```
+
+### 5. ES6 继承
+```
+//class 相当于es5中构造函数
+//class中定义方法时，前后不能加function，全部定义在class的prototyte属性中
+//class中定义的所有方法是不可枚举的
+//class中只能定义方法，不能定义对象，变量等
+//class和方法内默认都是严格模式
+//es5中constructor为隐式属性
+class People{
+  constructor(name='wang',age='27'){
+    this.name = name;
+    this.age = age;
+  }
+  eat(){
+    console.log(`${this.name} ${this.age} eat food`)
+  }
+}
+class Woman extends People {
+  constructor(name='wang', age='27') {
+    super(name, age);
+  }
+  eat(){
+    super.eat();
+  }
+}
+let wonmanObj=new Woman('xiaoxiami'); 
+wonmanObj.eat();
+//es5继承先创建子类的实例对象，然后再将父类的方法添加到this上（Parent.apply(this)）。 
+//es6继承是使用关键字super先创建父类的实例对象this，最后在子类class中修改this。
+```
