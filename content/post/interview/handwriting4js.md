@@ -149,3 +149,46 @@ wonmanObj.eat();
 //es5继承先创建子类的实例对象，然后再将父类的方法添加到this上（Parent.apply(this)）。 
 //es6继承是使用关键字super先创建父类的实例对象this，最后在子类class中修改this。
 ```
+
+### 6. new的实现
+- 一个继承自 Foo.prototype 的新对象被创建。
+- 使用指定的参数调用构造函数 Foo，并将 this 绑定到新创建的对象。new Foo 等同于 new Foo()，也就是没有指定参数列表，Foo 不带任何参数调用的情况。
+- 由构造函数返回的对象就是 new 表达式的结果。如果构造函数没有显式返回一个对象，则使用步骤1创建的对象。
+- 一般情况下，构造函数不返回值，但是用户可以选择主动返回对象，来覆盖正常的对象创建步骤
+
+```
+function myNew(Ctor, ...args) {
+  if (typeof Ctor !== 'function') {
+    throw new Error('Ctor should be a function')
+  }
+  const newObj = Object.create(Ctor.prototype);// 创建个继承自Ctor.prototype的新对象
+  const ctorResult = Ctor.apply(newObj, args);// 将构造函数的this绑定到新对象上
+  const isObject = typeof ctorResult === 'object' && ctorResult !== null;
+  const isFunction = typeof ctorResult === 'function';
+  if (isObject || isFunction) {
+    return ctorResult
+  }
+  return newObj;
+}
+```
+
+7. instanceof的实现
+- instanceof 是用来判断A是否为B的实例，表达式为：A instanceof B，如果A是B的实例，则返回true,否则返回false。
+- instanceof 运算符用来测试一个对象在其原型链中是否存在一个构造函数的 prototype 属性。
+- 不能检测基本数据类型，在原型链上的结果未必准确，不能检测null,undefined
+- 实现：遍历左边变量的原型链，直到找到右边变量的 prototype，如果没有找到，返回 false
+```
+function myInstanceOf(a, b) {
+  let left = a.__proto__;
+  const right = b.prototype;
+  while (true) {
+    if (!left) {
+      return false;
+    }
+    if (left === right) {
+      return true;
+    }
+    left = left.__proto__;
+  }
+}
+```
